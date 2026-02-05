@@ -1,4 +1,7 @@
 // src/app/api/admin/route.ts
+export const runtime = 'nodejs'
+
+
 import { NextResponse } from 'next/server'
 import {
   resetAll,

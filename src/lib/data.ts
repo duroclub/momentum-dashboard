@@ -1,11 +1,25 @@
 // src/lib/data.ts
 import type { User, LoginEvent, Intervention, Variant } from './types'
-
 // ---- In-memory "database" (dev-only) ----
 // NOTE: This resets whenever the server restarts (totally fine for a rapid proto).
-export const users: User[] = []
-export const logins: LoginEvent[] = []
-export const interventions: Intervention[] = []
+type Store = {
+    users: User[]
+    logins: LoginEvent[]
+    interventions: Intervention[]
+  }
+  
+  const store: Store =
+    (globalThis as any).__MOMENTUM_STORE__ ??
+    ((globalThis as any).__MOMENTUM_STORE__ = {
+      users: [],
+      logins: [],
+      interventions: [],
+    })
+  
+  export const users = store.users
+  export const logins = store.logins
+  export const interventions = store.interventions
+
 
 // ---- Helpers ----
 function now() {
@@ -131,3 +145,11 @@ export function sendIntervention(userId: string, variant?: Variant) {
   interventions.push(intervention)
   return intervention
 }
+
+export function getLatestIntervention(userId: string): Intervention | null {
+    for (let i = interventions.length - 1; i >= 0; i--) {
+      if (interventions[i].userId === userId) return interventions[i]
+    }
+    return null
+  }
+  
