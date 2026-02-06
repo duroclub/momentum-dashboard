@@ -1,0 +1,808 @@
+{
+  "users": [
+    {
+      "id": "user_1",
+      "name": "User 1",
+      "cohort": "control"
+    },
+    {
+      "id": "user_2",
+      "name": "User 2",
+      "cohort": "intervention"
+    },
+    {
+      "id": "user_3",
+      "name": "User 3",
+      "cohort": "intervention"
+    },
+    {
+      "id": "user_4",
+      "name": "User 4",
+      "cohort": "intervention"
+    },
+    {
+      "id": "user_5",
+      "name": "User 5",
+      "cohort": "control"
+    },
+    {
+      "id": "user_6",
+      "name": "User 6",
+      "cohort": "intervention"
+    },
+    {
+      "id": "user_7",
+      "name": "User 7",
+      "cohort": "intervention"
+    },
+    {
+      "id": "user_8",
+      "name": "User 8",
+      "cohort": "control"
+    },
+    {
+      "id": "user_9",
+      "name": "User 9",
+      "cohort": "intervention"
+    },
+    {
+      "id": "user_10",
+      "name": "User 10",
+      "cohort": "control"
+    },
+    {
+      "id": "user_11",
+      "name": "User 11",
+      "cohort": "intervention"
+    },
+    {
+      "id": "user_12",
+      "name": "User 12",
+      "cohort": "intervention"
+    },
+    {
+      "id": "user_13",
+      "name": "User 13",
+      "cohort": "control"
+    },
+    {
+      "id": "user_14",
+      "name": "User 14",
+      "cohort": "intervention"
+    },
+    {
+      "id": "user_15",
+      "name": "User 15",
+      "cohort": "intervention"
+    },
+    {
+      "id": "user_16",
+      "name": "User 16",
+      "cohort": "intervention"
+    },
+    {
+      "id": "user_17",
+      "name": "User 17",
+      "cohort": "control"
+    },
+    {
+      "id": "user_18",
+      "name": "User 18",
+      "cohort": "intervention"
+    },
+    {
+      "id": "user_19",
+      "name": "User 19",
+      "cohort": "intervention"
+    },
+    {
+      "id": "user_20",
+      "name": "User 20",
+      "cohort": "intervention"
+    },
+    {
+      "id": "user_21",
+      "name": "User 21",
+      "cohort": "control"
+    },
+    {
+      "id": "user_22",
+      "name": "User 22",
+      "cohort": "intervention"
+    },
+    {
+      "id": "user_23",
+      "name": "User 23",
+      "cohort": "intervention"
+    },
+    {
+      "id": "user_24",
+      "name": "User 24",
+      "cohort": "intervention"
+    },
+    {
+      "id": "user_25",
+      "name": "User 25",
+      "cohort": "control"
+    },
+    {
+      "id": "user_26",
+      "name": "User 26",
+      "cohort": "intervention"
+    },
+    {
+      "id": "user_27",
+      "name": "User 27",
+      "cohort": "intervention"
+    },
+    {
+      "id": "user_28",
+      "name": "User 28",
+      "cohort": "intervention"
+    },
+    {
+      "id": "user_29",
+      "name": "User 29",
+      "cohort": "intervention"
+    },
+    {
+      "id": "user_30",
+      "name": "User 30",
+      "cohort": "intervention"
+    }
+  ],
+  "logins": [
+    {
+      "userId": "user_26",
+      "timestamp": 1769737746648
+    },
+    {
+      "userId": "user_7",
+      "timestamp": 1769748331261
+    },
+    {
+      "userId": "user_10",
+      "timestamp": 1769759091074
+    },
+    {
+      "userId": "user_9",
+      "timestamp": 1769763086340
+    },
+    {
+      "userId": "user_10",
+      "timestamp": 1769780144413
+    },
+    {
+      "userId": "user_29",
+      "timestamp": 1769781203940
+    },
+    {
+      "userId": "user_20",
+      "timestamp": 1769782852774
+    },
+    {
+      "userId": "user_26",
+      "timestamp": 1769790180735
+    },
+    {
+      "userId": "user_10",
+      "timestamp": 1769790709916
+    },
+    {
+      "userId": "user_29",
+      "timestamp": 1769791163020
+    },
+    {
+      "userId": "user_25",
+      "timestamp": 1769795143938
+    },
+    {
+      "userId": "user_24",
+      "timestamp": 1769798283909
+    },
+    {
+      "userId": "user_7",
+      "timestamp": 1769800045152
+    },
+    {
+      "userId": "user_18",
+      "timestamp": 1769805297739
+    },
+    {
+      "userId": "user_17",
+      "timestamp": 1769808650753
+    },
+    {
+      "userId": "user_17",
+      "timestamp": 1769808673875
+    },
+    {
+      "userId": "user_21",
+      "timestamp": 1769814386859
+    },
+    {
+      "userId": "user_13",
+      "timestamp": 1769815608732
+    },
+    {
+      "userId": "user_8",
+      "timestamp": 1769821045197
+    },
+    {
+      "userId": "user_30",
+      "timestamp": 1769839334002
+    },
+    {
+      "userId": "user_30",
+      "timestamp": 1769847983533
+    },
+    {
+      "userId": "user_10",
+      "timestamp": 1769850556813
+    },
+    {
+      "userId": "user_11",
+      "timestamp": 1769852042615
+    },
+    {
+      "userId": "user_12",
+      "timestamp": 1769854144291
+    },
+    {
+      "userId": "user_3",
+      "timestamp": 1769855096600
+    },
+    {
+      "userId": "user_10",
+      "timestamp": 1769855417650
+    },
+    {
+      "userId": "user_12",
+      "timestamp": 1769861228249
+    },
+    {
+      "userId": "user_9",
+      "timestamp": 1769864257511
+    },
+    {
+      "userId": "user_27",
+      "timestamp": 1769864846358
+    },
+    {
+      "userId": "user_7",
+      "timestamp": 1769864977272
+    },
+    {
+      "userId": "user_9",
+      "timestamp": 1769875299331
+    },
+    {
+      "userId": "user_12",
+      "timestamp": 1769884940546
+    },
+    {
+      "userId": "user_7",
+      "timestamp": 1769886374925
+    },
+    {
+      "userId": "user_25",
+      "timestamp": 1769889718822
+    },
+    {
+      "userId": "user_26",
+      "timestamp": 1769891905420
+    },
+    {
+      "userId": "user_22",
+      "timestamp": 1769892281810
+    },
+    {
+      "userId": "user_4",
+      "timestamp": 1769893335714
+    },
+    {
+      "userId": "user_24",
+      "timestamp": 1769893957725
+    },
+    {
+      "userId": "user_20",
+      "timestamp": 1769894402031
+    },
+    {
+      "userId": "user_24",
+      "timestamp": 1769897041844
+    },
+    {
+      "userId": "user_12",
+      "timestamp": 1769905896885
+    },
+    {
+      "userId": "user_26",
+      "timestamp": 1769905964639
+    },
+    {
+      "userId": "user_29",
+      "timestamp": 1769905966632
+    },
+    {
+      "userId": "user_26",
+      "timestamp": 1769910246199
+    },
+    {
+      "userId": "user_5",
+      "timestamp": 1769914273627
+    },
+    {
+      "userId": "user_14",
+      "timestamp": 1769920917554
+    },
+    {
+      "userId": "user_7",
+      "timestamp": 1769923604166
+    },
+    {
+      "userId": "user_12",
+      "timestamp": 1769928818357
+    },
+    {
+      "userId": "user_3",
+      "timestamp": 1769933482421
+    },
+    {
+      "userId": "user_29",
+      "timestamp": 1769940479014
+    },
+    {
+      "userId": "user_14",
+      "timestamp": 1769945449121
+    },
+    {
+      "userId": "user_23",
+      "timestamp": 1769949535383
+    },
+    {
+      "userId": "user_9",
+      "timestamp": 1769958196780
+    },
+    {
+      "userId": "user_9",
+      "timestamp": 1769959358499
+    },
+    {
+      "userId": "user_24",
+      "timestamp": 1769960528794
+    },
+    {
+      "userId": "user_14",
+      "timestamp": 1769965327470
+    },
+    {
+      "userId": "user_8",
+      "timestamp": 1769968764779
+    },
+    {
+      "userId": "user_3",
+      "timestamp": 1769971679824
+    },
+    {
+      "userId": "user_3",
+      "timestamp": 1769972451958
+    },
+    {
+      "userId": "user_7",
+      "timestamp": 1769976800051
+    },
+    {
+      "userId": "user_6",
+      "timestamp": 1769982092099
+    },
+    {
+      "userId": "user_24",
+      "timestamp": 1769997497269
+    },
+    {
+      "userId": "user_2",
+      "timestamp": 1770003277031
+    },
+    {
+      "userId": "user_19",
+      "timestamp": 1770004962904
+    },
+    {
+      "userId": "user_15",
+      "timestamp": 1770009563230
+    },
+    {
+      "userId": "user_13",
+      "timestamp": 1770009821541
+    },
+    {
+      "userId": "user_8",
+      "timestamp": 1770016567069
+    },
+    {
+      "userId": "user_30",
+      "timestamp": 1770019793069
+    },
+    {
+      "userId": "user_10",
+      "timestamp": 1770021944038
+    },
+    {
+      "userId": "user_30",
+      "timestamp": 1770022899383
+    },
+    {
+      "userId": "user_1",
+      "timestamp": 1770023399596
+    },
+    {
+      "userId": "user_13",
+      "timestamp": 1770027627527
+    },
+    {
+      "userId": "user_18",
+      "timestamp": 1770029532023
+    },
+    {
+      "userId": "user_8",
+      "timestamp": 1770029833482
+    },
+    {
+      "userId": "user_4",
+      "timestamp": 1770032968475
+    },
+    {
+      "userId": "user_3",
+      "timestamp": 1770033366813
+    },
+    {
+      "userId": "user_23",
+      "timestamp": 1770035995511
+    },
+    {
+      "userId": "user_13",
+      "timestamp": 1770038675113
+    },
+    {
+      "userId": "user_10",
+      "timestamp": 1770040075597
+    },
+    {
+      "userId": "user_26",
+      "timestamp": 1770041233043
+    },
+    {
+      "userId": "user_18",
+      "timestamp": 1770042305340
+    },
+    {
+      "userId": "user_24",
+      "timestamp": 1770042367290
+    },
+    {
+      "userId": "user_3",
+      "timestamp": 1770042495591
+    },
+    {
+      "userId": "user_13",
+      "timestamp": 1770043830611
+    },
+    {
+      "userId": "user_11",
+      "timestamp": 1770058148928
+    },
+    {
+      "userId": "user_29",
+      "timestamp": 1770060270006
+    },
+    {
+      "userId": "user_26",
+      "timestamp": 1770060431300
+    },
+    {
+      "userId": "user_3",
+      "timestamp": 1770063802649
+    },
+    {
+      "userId": "user_22",
+      "timestamp": 1770064813570
+    },
+    {
+      "userId": "user_22",
+      "timestamp": 1770067494810
+    },
+    {
+      "userId": "user_9",
+      "timestamp": 1770077983218
+    },
+    {
+      "userId": "user_13",
+      "timestamp": 1770084250461
+    },
+    {
+      "userId": "user_23",
+      "timestamp": 1770087360258
+    },
+    {
+      "userId": "user_29",
+      "timestamp": 1770089806785
+    },
+    {
+      "userId": "user_17",
+      "timestamp": 1770090877066
+    },
+    {
+      "userId": "user_14",
+      "timestamp": 1770091531555
+    },
+    {
+      "userId": "user_11",
+      "timestamp": 1770092643550
+    },
+    {
+      "userId": "user_20",
+      "timestamp": 1770094405836
+    },
+    {
+      "userId": "user_15",
+      "timestamp": 1770096558372
+    },
+    {
+      "userId": "user_29",
+      "timestamp": 1770096943487
+    },
+    {
+      "userId": "user_29",
+      "timestamp": 1770098530081
+    },
+    {
+      "userId": "user_30",
+      "timestamp": 1770098649618
+    },
+    {
+      "userId": "user_26",
+      "timestamp": 1770099266414
+    },
+    {
+      "userId": "user_30",
+      "timestamp": 1770100827188
+    },
+    {
+      "userId": "user_16",
+      "timestamp": 1770106030611
+    },
+    {
+      "userId": "user_18",
+      "timestamp": 1770116422037
+    },
+    {
+      "userId": "user_22",
+      "timestamp": 1770118573443
+    },
+    {
+      "userId": "user_22",
+      "timestamp": 1770134090470
+    },
+    {
+      "userId": "user_11",
+      "timestamp": 1770134630615
+    },
+    {
+      "userId": "user_26",
+      "timestamp": 1770136660036
+    },
+    {
+      "userId": "user_13",
+      "timestamp": 1770138700336
+    },
+    {
+      "userId": "user_12",
+      "timestamp": 1770139033088
+    },
+    {
+      "userId": "user_30",
+      "timestamp": 1770149629755
+    },
+    {
+      "userId": "user_22",
+      "timestamp": 1770153104960
+    },
+    {
+      "userId": "user_21",
+      "timestamp": 1770156039824
+    },
+    {
+      "userId": "user_24",
+      "timestamp": 1770156404091
+    },
+    {
+      "userId": "user_23",
+      "timestamp": 1770160957640
+    },
+    {
+      "userId": "user_14",
+      "timestamp": 1770162548146
+    },
+    {
+      "userId": "user_29",
+      "timestamp": 1770166940430
+    },
+    {
+      "userId": "user_16",
+      "timestamp": 1770169500295
+    },
+    {
+      "userId": "user_24",
+      "timestamp": 1770172552466
+    },
+    {
+      "userId": "user_23",
+      "timestamp": 1770186436103
+    },
+    {
+      "userId": "user_23",
+      "timestamp": 1770195300457
+    },
+    {
+      "userId": "user_19",
+      "timestamp": 1770204425715
+    },
+    {
+      "userId": "user_23",
+      "timestamp": 1770204477888
+    },
+    {
+      "userId": "user_22",
+      "timestamp": 1770207503029
+    },
+    {
+      "userId": "user_14",
+      "timestamp": 1770226705397
+    },
+    {
+      "userId": "user_19",
+      "timestamp": 1770227766429
+    },
+    {
+      "userId": "user_24",
+      "timestamp": 1770227791927
+    },
+    {
+      "userId": "user_23",
+      "timestamp": 1770239099938
+    },
+    {
+      "userId": "user_12",
+      "timestamp": 1770240209895
+    },
+    {
+      "userId": "user_24",
+      "timestamp": 1770242258501
+    },
+    {
+      "userId": "user_20",
+      "timestamp": 1770242838400
+    },
+    {
+      "userId": "user_26",
+      "timestamp": 1770245514006
+    },
+    {
+      "userId": "user_22",
+      "timestamp": 1770247807053
+    },
+    {
+      "userId": "user_13",
+      "timestamp": 1770256465507
+    },
+    {
+      "userId": "user_13",
+      "timestamp": 1770256797491
+    },
+    {
+      "userId": "user_13",
+      "timestamp": 1770269047852
+    },
+    {
+      "userId": "user_12",
+      "timestamp": 1770275864283
+    },
+    {
+      "userId": "user_11",
+      "timestamp": 1770301549988
+    },
+    {
+      "userId": "user_22",
+      "timestamp": 1770302354315
+    },
+    {
+      "userId": "user_12",
+      "timestamp": 1770307317391
+    },
+    {
+      "userId": "user_21",
+      "timestamp": 1770316730539
+    },
+    {
+      "userId": "user_20",
+      "timestamp": 1770316894125
+    },
+    {
+      "userId": "user_22",
+      "timestamp": 1770317042104
+    },
+    {
+      "userId": "user_29",
+      "timestamp": 1770324979729
+    },
+    {
+      "userId": "user_29",
+      "timestamp": 1770327464793
+    },
+    {
+      "userId": "user_25",
+      "timestamp": 1770333894900
+    },
+    {
+      "userId": "user_27",
+      "timestamp": 1770334017491
+    },
+    {
+      "userId": "user_29",
+      "timestamp": 1770335755102
+    },
+    {
+      "userId": "user_22",
+      "timestamp": 1770338784548
+    },
+    {
+      "userId": "user_1",
+      "timestamp": 1770342374516
+    }
+  ],
+  "interventions": [
+    {
+      "id": "iv_390025b7e37f4_1770342358624",
+      "userId": "user_1",
+      "variant": "A",
+      "sentAt": 1770342358624
+    },
+    {
+      "id": "iv_db771b6abad29_1770342362162",
+      "userId": "user_1",
+      "variant": "B",
+      "sentAt": 1770342362162
+    },
+    {
+      "id": "iv_cf50ce5a4f031_1770342367689",
+      "userId": "user_1",
+      "variant": "A",
+      "sentAt": 1770342367689
+    },
+    {
+      "id": "iv_035eaa2ef2ea7_1770342370094",
+      "userId": "user_1",
+      "variant": "B",
+      "sentAt": 1770342370094
+    },
+    {
+      "id": "iv_6013ff583bfa5_1770342371933",
+      "userId": "user_1",
+      "variant": "A",
+      "sentAt": 1770342371933
+    },
+    {
+      "id": "iv_f7b66129f60bc_1770342373028",
+      "userId": "user_1",
+      "variant": "B",
+      "sentAt": 1770342373028
+    },
+    {
+      "id": "iv_f66786c384a6b_1770342373588",
+      "userId": "user_1",
+      "variant": "A",
+      "sentAt": 1770342373588
+    }
+  ]
+}

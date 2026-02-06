@@ -2,18 +2,90 @@
 export const dynamic = 'force-dynamic'
 export const revalidate = 0
 
+import { headers } from 'next/headers'
 import Link from 'next/link'
-import { users, getLastLoginAt } from '@/lib/data'
-import { isStalled, hoursSinceLastLogin, getLatestIntervention, reengagedWithinWindow } from '@/lib/logic'
 
+type Cohort = 'control' | 'intervention'
+type Variant = 'A' | 'B'
 
+type User = { id: string; name?: string; cohort: Cohort }
+type LoginEvent = { userId: string; timestamp: number }
+type Intervention = { id: string; userId: string; variant: Variant; sentAt: number }
+
+type Store = {
+  users: User[]
+  logins: LoginEvent[]
+  interventions: Intervention[]
+}
+
+async function baseUrl() {
+    const h = await headers()
+    const host = h.get('host')
+    const proto = h.get('x-forwarded-proto') ?? 'http'
+    if (!host) throw new Error('Missing Host header')
+    return `${proto}://${host}`
+  }  
 
 function formatTime(ts: number | null) {
   if (!ts) return '—'
   return new Date(ts).toLocaleString()
 }
 
-export default function DashboardPage() {
+const STALL_HOURS = 72
+const REENGAGE_HOURS = 48
+
+function getLastLoginAt(store: Store, userId: string): number | null {
+  // scan from end (latest) – store.logins should be sorted asc, but even if not, this still works-ish
+  for (let i = store.logins.length - 1; i >= 0; i--) {
+    const e = store.logins[i]
+    if (e.userId === userId) return e.timestamp
+  }
+  return null
+}
+
+function hoursSince(ts: number | null, now = Date.now()) {
+  if (!ts) return Infinity
+  return (now - ts) / (1000 * 60 * 60)
+}
+
+function isStalled(store: Store, userId: string, now = Date.now()) {
+  const last = getLastLoginAt(store, userId)
+  return hoursSince(last, now) >= STALL_HOURS
+}
+
+function getLatestIntervention(store: Store, userId: string): Intervention | null {
+  for (let i = store.interventions.length - 1; i >= 0; i--) {
+    const iv = store.interventions[i]
+    if (iv.userId === userId) return iv
+  }
+  return null
+}
+
+function reengagedWithinWindow(store: Store, userId: string, now = Date.now()): boolean | null {
+  const latest = getLatestIntervention(store, userId)
+  if (!latest) return null
+
+  const windowEnd = latest.sentAt + REENGAGE_HOURS * 60 * 60 * 1000
+
+  for (let i = store.logins.length - 1; i >= 0; i--) {
+    const e = store.logins[i]
+    if (e.userId !== userId) continue
+    if (e.timestamp < latest.sentAt) break
+    if (e.timestamp <= windowEnd) return true
+  }
+
+  // No login found inside the window (or not yet)
+  return false
+}
+
+export default async function DashboardPage() {
+    const res = await fetch(`${await baseUrl()}/api/state`, { cache: 'no-store' })
+const json = await res.json()
+
+const store: Store = json?.store ?? { users: [], logins: [], interventions: [] }
+const users = store.users
+
+
   return (
     <main style={{ padding: 24 }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
@@ -46,11 +118,11 @@ export default function DashboardPage() {
 
           <tbody>
             {users.map((u) => {
-              const last = getLastLoginAt(u.id)
-              const stalled = isStalled(u.id)
-              const hrs = hoursSinceLastLogin(u.id)
-              const latestIv = getLatestIntervention(u.id)
-              const re = reengagedWithinWindow(u.id)
+              const last = getLastLoginAt(store, u.id)
+              const stalled = isStalled(store, u.id)
+              const hrs = hoursSince(last)
+              const latestIv = getLatestIntervention(store, u.id)
+              const re = reengagedWithinWindow(store, u.id)
 
               return (
                 <tr key={u.id} style={{ background: stalled ? '#fff2f2' : 'transparent' }}>
@@ -59,9 +131,7 @@ export default function DashboardPage() {
                     <div style={{ fontSize: 12, opacity: 0.7 }}>{u.id}</div>
                   </td>
 
-                  <td style={{ padding: 10, borderBottom: '1px solid #f0f0f0' }}>
-                    {u.cohort}
-                  </td>
+                  <td style={{ padding: 10, borderBottom: '1px solid #f0f0f0' }}>{u.cohort}</td>
 
                   <td style={{ padding: 10, borderBottom: '1px solid #f0f0f0' }}>
                     {formatTime(last)}
@@ -76,7 +146,9 @@ export default function DashboardPage() {
                   </td>
 
                   <td style={{ padding: 10, borderBottom: '1px solid #f0f0f0' }}>
-                    {latestIv ? `v${latestIv.variant} @ ${new Date(latestIv.sentAt).toLocaleString()}` : '—'}
+                    {latestIv
+                      ? `v${latestIv.variant} @ ${new Date(latestIv.sentAt).toLocaleString()}`
+                      : '—'}
                   </td>
 
                   <td style={{ padding: 10, borderBottom: '1px solid #f0f0f0', fontWeight: 700 }}>

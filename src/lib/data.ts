@@ -153,3 +153,6 @@ export function getLatestIntervention(userId: string): Intervention | null {
     return null
   }
   
+  export function getUserById(userId: string) {
+    return users.find((u) => u.id === userId) ?? null
+  }

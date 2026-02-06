@@ -25,7 +25,23 @@ export default function AdminPage() {
     setLoading(null)
   }
 
+  const btnStyle: React.CSSProperties = {
+    border: '1px solid #ccc',
+    padding: '10px 12px',
+    borderRadius: 10,
+    background: 'white',
+    cursor: 'pointer',
+    fontWeight: 700,
+  }
+
+  const btnDisabled: React.CSSProperties = {
+    ...btnStyle,
+    opacity: 0.6,
+    cursor: 'not-allowed',
+  }
+
   const busy = (label: string) => loading === label
+  const disabled = (label: string) => !!loading && !busy(label)
 
   return (
     <main style={{ padding: 24, maxWidth: 900 }}>
@@ -36,6 +52,7 @@ export default function AdminPage() {
 
       <div style={{ marginTop: 24, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
         <button
+          style={disabled('reset') ? btnDisabled : btnStyle}
           onClick={() => run('reset', { action: 'reset' })}
           disabled={!!loading}
         >
@@ -43,6 +60,7 @@ export default function AdminPage() {
         </button>
 
         <button
+          style={disabled('seed') ? btnDisabled : btnStyle}
           onClick={() => run('seed', { action: 'seed', count: 30 })}
           disabled={!!loading}
         >
@@ -50,6 +68,7 @@ export default function AdminPage() {
         </button>
 
         <button
+          style={disabled('simulate') ? btnDisabled : btnStyle}
           onClick={() => run('simulate', { action: 'simulateLogins', days: 7 })}
           disabled={!!loading}
         >
@@ -57,6 +76,7 @@ export default function AdminPage() {
         </button>
 
         <button
+          style={disabled('force') ? btnDisabled : btnStyle}
           onClick={() => run('force', { action: 'forceStalled', count: 10 })}
           disabled={!!loading}
         >
@@ -64,11 +84,15 @@ export default function AdminPage() {
         </button>
 
         <button
+          style={disabled('bootstrap') ? btnDisabled : btnStyle}
           onClick={async () => {
-            await run('bootstrap', { action: 'reset' })
-            await run('bootstrap', { action: 'seed', count: 30 })
-            await run('bootstrap', { action: 'simulateLogins', days: 7 })
-            await run('bootstrap', { action: 'forceStalled', count: 10 })
+            setLoading('bootstrap')
+            setLog(null)
+            await adminAction({ action: 'reset' })
+            await adminAction({ action: 'seed', count: 30 })
+            await adminAction({ action: 'simulateLogins', days: 7 })
+            await adminAction({ action: 'forceStalled', count: 10 })
+            setLoading(null)
             router.push('/dashboard')
           }}
           disabled={!!loading}
@@ -78,29 +102,23 @@ export default function AdminPage() {
       </div>
 
       <div style={{ marginTop: 24 }}>
-        <button onClick={() => router.push('/dashboard')} disabled={!!loading}>
+        <button style={btnStyle} onClick={() => router.push('/dashboard')} disabled={!!loading}>
           Go to Dashboard →
         </button>
       </div>
 
-      <pre style={{ marginTop: 24, padding: 12, background: '#111', color: '#ddd', borderRadius: 8, overflow: 'auto' }}>
+      <pre
+        style={{
+          marginTop: 24,
+          padding: 12,
+          background: '#111',
+          color: '#ddd',
+          borderRadius: 8,
+          overflow: 'auto',
+        }}
+      >
         {log ? JSON.stringify(log, null, 2) : 'Run an action to see output…'}
       </pre>
-
-      <style jsx>{`
-        button {
-          border: 1px solid #ccc;
-          padding: 10px 12px;
-          border-radius: 10px;
-          background: white;
-          cursor: pointer;
-          font-weight: 600;
-        }
-        button:disabled {
-          opacity: 0.6;
-          cursor: not-allowed;
-        }
-      `}</style>
     </main>
   )
 }
